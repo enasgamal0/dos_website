@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Somar";
+  src: url("/Fonts/SomarSans-Regular.ttf") format("truetype");
+}
+* {
+  font-family: "Somar";
+}
+:root {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar {
+  @apply w-[5px] h-[10px];
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#000];
+}
