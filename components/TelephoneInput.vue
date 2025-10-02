@@ -6,7 +6,7 @@
         <button
           type="button"
           @click="toggleDropdown"
-          class="cursor-pointer flex items-center px-3 py-[14px] border border-[#EEEDEE] bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#4B007D]"
+          class="cursor-pointer flex items-center px-3 py-[14px] border border-[#EEEDEE] bg-white hover:bg-gray-50 rounded-l-[25px]"
         >
           <img
             v-if="selectedCountry?.image"
@@ -48,7 +48,7 @@
               v-model="searchQuery"
               type="text"
               :placeholder="t('auth.search_countries')"
-              class="w-full px-3 py-2 border border-[#EEEDEE] text-sm focus:outline-none focus:ring-2 focus:ring-[#4B007D]"
+              class="w-full px-3 py-2 border border-[#EEEDEE] text-sm"
             />
           </div>
 
@@ -85,7 +85,7 @@
       <input
         v-model="phoneNumber"
         type="tel"
-        class="flex-1 px-4 py-3 border border-l-0 border-[#EEEDEE] focus:outline-none focus:ring-2 focus:ring-[#4B007D] telephone_input"
+        class="flex-1 px-4 py-3 border border-l-0 border-[#EEEDEE] telephone_input rounded-r-[25px]"
         :class="locale == 'ar' ? 'phone_input' : ''"
         @input="onPhoneNumberInput"
         :placeholder="$t('placeholders.phone')"
@@ -117,7 +117,11 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue", "country-changed", "validation-changed"]);
+const emit = defineEmits([
+  "update:modelValue",
+  "country-changed",
+  "validation-changed",
+]);
 
 const isDropdownOpen = ref(false);
 const searchQuery = ref("");
@@ -155,14 +159,14 @@ const selectCountry = (country) => {
     console.warn("Invalid country selected:", country);
     return;
   }
-  
+
   selectedCountry.value = country;
   isDropdownOpen.value = false;
 
   // Clean phone number if it contains the old country code
-  if (phoneNumber.value && phoneNumber.value.startsWith('+')) {
+  if (phoneNumber.value && phoneNumber.value.startsWith("+")) {
     // Remove any existing country code from phone number
-    const cleanNumber = phoneNumber.value.replace(/^\+\d+/, '');
+    const cleanNumber = phoneNumber.value.replace(/^\+\d+/, "");
     phoneNumber.value = cleanNumber;
   }
 
@@ -171,7 +175,7 @@ const selectCountry = (country) => {
   if (props.validate) {
     validatePhoneNumber();
   }
-  
+
   // Emit country change with full country object
   emit("country-changed", country);
 };
@@ -191,8 +195,8 @@ const updateModelValue = () => {
   if (selectedCountry.value?.phone?.[0]) {
     // Remove country code if user accidentally typed it
     let numberToProcess = phoneNumber.value;
-    const countryCode = selectedCountry.value.phone[0].replace('+', '');
-    
+    const countryCode = selectedCountry.value.phone[0].replace("+", "");
+
     if (numberToProcess.startsWith(countryCode)) {
       numberToProcess = numberToProcess.substring(countryCode.length);
     }
@@ -209,8 +213,12 @@ const updateModelValue = () => {
 const validatePhoneNumber = () => {
   let message = "";
   let isValid = true;
-  
-  if (!phoneNumber.value || !selectedCountry.value || !selectedCountry.value.phone?.[0]) {
+
+  if (
+    !phoneNumber.value ||
+    !selectedCountry.value ||
+    !selectedCountry.value.phone?.[0]
+  ) {
     message = "";
     isValid = !phoneNumber.value; // If there's a phone number but no country, it's invalid
   } else {
@@ -225,7 +233,7 @@ const validatePhoneNumber = () => {
       isValid = false;
     }
   }
-  
+
   validationMessage.value = message;
   emit("validation-changed", isValid, message);
 };
@@ -241,7 +249,10 @@ const handleManualCountryCodeInput = () => {
 
     if (matchingCountry && matchingCountry !== selectedCountry.value) {
       selectedCountry.value = matchingCountry;
-      phoneNumber.value = phoneNumber.value.replace(matchingCountry.phone[0], "");
+      phoneNumber.value = phoneNumber.value.replace(
+        matchingCountry.phone[0],
+        ""
+      );
       emit("country-changed", matchingCountry);
     }
   }
@@ -253,12 +264,12 @@ const initializeDefaultCountry = () => {
   let defaultCountry = null;
 
   // First check if defaultCountry is a country code like "+966"
-  if (props.defaultCountry.startsWith('+')) {
+  if (props.defaultCountry.startsWith("+")) {
     defaultCountry = props.countries.find(
       (c) => c?.phone?.[0] === props.defaultCountry
     );
   }
-  
+
   // If not found, check if it's an ISO code (SA, EG, etc)
   if (!defaultCountry) {
     defaultCountry = props.countries.find(
@@ -300,7 +311,7 @@ const initialize = () => {
   parseInitialValue();
 
   isInitialized.value = true;
-  
+
   if (props.validate) {
     validatePhoneNumber();
   }
@@ -336,7 +347,7 @@ watch(
     // Only update if the value actually changed to avoid infinite loops
     if (newValue !== phoneNumber.value) {
       phoneNumber.value = newValue ? newValue.toString() : "";
-      
+
       if (props.validate) {
         validatePhoneNumber();
       }

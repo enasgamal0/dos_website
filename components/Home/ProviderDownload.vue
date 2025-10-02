@@ -2,7 +2,7 @@
   <div
     class="lg:flex items-center justify-center rounded-[50px] max-w-[1170px] xl:!mx-auto mx-3 my-16 text-white xl:!px-20 px-10 bg-[#F7F7F7] gap-20 bg-[url('/cars_bg.png')] bg-no-repeat bg-bottom-left pt-12"
   >
-    <div class="max-w-[439px] block lg:!hidden mb-7">
+    <div class="max-w-[439px] block lg:!hidden mb-7 mx-auto">
       <img
         src="/car.png"
         alt="Car"

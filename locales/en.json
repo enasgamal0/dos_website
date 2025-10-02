@@ -232,7 +232,7 @@
     "type_required": "Type is required",
     "message": "Message is required",
     "phone_number": "Phone Number is required",
-    "inquiry_type": "Inquiry Type is required",
+    "inquiry_type": "Message Type is required",
     "name_required": "Name is required"
   },
   "error": {
@@ -448,7 +448,12 @@
     "suggestion": "Suggestion",
     "inquiry": "Inquiry",
     "other": "Other",
-    "address": "Address"
+    "address": "Address",
+    "message_min": "Message must be at least 3 characters long",
+    "enter_name": "Enter your Name",
+    "enter_email": "Enter your Email",
+    "enter_phone": "Enter your Phone Number",
+    "enter_message": "Type your Message here..."
   },
   "top_students": {
     "title": "Honor Board: Where We Celebrate Our",

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://backend.dos.moltaqadev.com/client-api/v1/",
+  baseURL: "https://backend.dos.moltaqadev.com/landing-api/v1/",
   headers: {
     Accept: "application/json",
     "api-key": "QVER63S8aTEhjdMTr5av8Y6EPBhEd6",

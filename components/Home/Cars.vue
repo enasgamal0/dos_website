@@ -7,3 +7,28 @@
     </div>
   </div>
 </template>
+<script setup>
+const { locale } = useI18n();
+const loading = ref(true);
+const cars = ref([]);
+
+onMounted(async () => {
+  loading.value = true;
+  try {
+    cars.value = await apiRequest(
+      "GET",
+      `/main/vehicles?latest_vehicles=1`,
+      {},
+      {},
+      null,
+      locale.value
+    );
+    cars.value = cars.value?.data;
+  } catch (error) {
+    console.error("Failed to load contact:", error);
+    cars.value = [];
+  } finally {
+    loading.value = false;
+  }
+});
+</script>

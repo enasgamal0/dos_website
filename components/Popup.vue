@@ -311,18 +311,9 @@
 
           <!-- Submit Button -->
           <div class="w-[80%] mx-auto my-8">
-            <BaseButton
-              :content="$t('courses.confirm')"
-              border-color="#E77C5A"
-              bg-color="#4B007D"
-              width="100%"
-              class="mx-auto my-4"
-              lg_space="true"
-              font_size="16px"
-              :pending="changePasswordLoading"
-              type="submit"
-              :lg_reversed_space="true"
-            />
+            <BaseButton>
+              {{ $t("contact.title") }}
+            </BaseButton>
           </div>
         </VeeForm>
       </div>
@@ -1171,8 +1162,6 @@
         v-if="loading"
       />
     </div>
-
-    
   </div>
 </template>
 
@@ -1195,7 +1184,7 @@ const props = defineProps({
   pkg: Object,
   readLoading: {
     type: Boolean,
-    default: false
+    default: false,
   },
   errorMessage: String,
   question: Object,
@@ -1217,10 +1206,18 @@ const privacy = ref(``);
 const modalRef = ref(null);
 const rating = ref(null);
 const tokenCookie = useCookie("dos_token", { maxAge: 60 * 60 * 24 * 90 });
-const OtpTokenCookie = useCookie("dos_otp_token", { maxAge: 60 * 60 * 24 * 90 });
-const studentName = useCookie("dos_student_name", { maxAge: 60 * 60 * 24 * 90 });
-const academic_stage = useCookie("dos_academic_stage", { maxAge: 60 * 60 * 24 * 90 });
-const academic_year = useCookie("dos_academic_year", { maxAge: 60 * 60 * 24 * 90 });
+const OtpTokenCookie = useCookie("dos_otp_token", {
+  maxAge: 60 * 60 * 24 * 90,
+});
+const studentName = useCookie("dos_student_name", {
+  maxAge: 60 * 60 * 24 * 90,
+});
+const academic_stage = useCookie("dos_academic_stage", {
+  maxAge: 60 * 60 * 24 * 90,
+});
+const academic_year = useCookie("dos_academic_year", {
+  maxAge: 60 * 60 * 24 * 90,
+});
 const router = useRouter();
 const localePath = useLocalePath();
 const loading = ref(true);

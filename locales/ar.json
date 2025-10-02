@@ -231,9 +231,10 @@
     "phone_too_long": "رقم الجوال يجب أن يتكون من {length} رقم",
     "type_required": "نوع الرسالة مطلوب",
     "message": "الرسالة مطلوبة",
-    "phone_number": "رقم الجوال مطلوب",
+    "phone_number": "رقم الهاتف مطلوب",
     "inquiry_type": "نوع الرسالة مطلوب",
-    "name_required": "الاسم مطلوب"
+    "name_required": "الاسم مطلوب",
+    "message_min": "الرسالة يجب ألا تقل عن 3 حرف"
   },
   "error": {
     "not_found": "عذرًا، لم نتمكن من العثور على الصفحة",
@@ -448,7 +449,12 @@
     "suggestion": "اقتراح",
     "inquiry": "استفسار",
     "other": "سبب آخر",
-    "address": "العنوان"
+    "address": "العنوان",
+    "message_min": "يجب أن تحتوي الرسالة على 3 أحرف على الأقل",
+    "enter_name": "أدخل اسمك",
+    "enter_email": "أدخل بريدك الإلكتروني",
+    "enter_phone": "أدخل رقم هاتفك",
+    "enter_message": "اترك رسالتك هنا..."
   },
   "top_students": {
     "title": "لوحة الشرف: حيث نكرّم ",
