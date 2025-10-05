@@ -18,7 +18,11 @@
           :to="localePath('/')"
           class="cursor-pointer hover:scale-[1.02] transition duration-300 ease-in-out"
         >
-          <img src="/logo.png" alt="Dos Logo" class="lg:!w-[77.5px] lg:!h-[64px] w-[50px] h-[40px]" />
+          <img
+            src="/logo.png"
+            alt="Dos Logo"
+            class="lg:!w-[77.5px] lg:!h-[64px] w-[50px] h-[40px]"
+          />
         </NuxtLink>
       </div>
 
@@ -31,20 +35,18 @@
         >
           {{ $t("nav.home") }}
         </NuxtLink>
-        <NuxtLink
-          :to="localePath('/about')"
+        <a
+          :href="localePath('/#about')"
           class="text-[#303030] hover:scale-[1.02] transition duration-300 ease-in-out"
-          exact-active-class="font-bold"
         >
           {{ $t("nav.about") }}
-        </NuxtLink>
-        <NuxtLink
-          :to="localePath('/why_us')"
+        </a>
+        <a
+          :href="localePath('/#why_us')"
           class="text-[#303030] hover:scale-[1.02] transition duration-300 ease-in-out"
-          exact-active-class="font-bold"
         >
           {{ $t("nav.why_us") }}
-        </NuxtLink>
+        </a>
         <NuxtLink
           :to="localePath('/book_now')"
           class="text-[#303030] hover:scale-[1.02] transition duration-300 ease-in-out"
@@ -52,19 +54,18 @@
         >
           {{ $t("nav.book_now") }}
         </NuxtLink>
-        <NuxtLink
-          :to="localePath('/privacy')"
-          class="text-[#303030] hover:scale-[1.02] transition duration-300 ease-in-out"
-          exact-active-class="font-bold"
+        <div
+          class="text-[#303030] hover:scale-[1.02] transition duration-300 ease-in-out cursor-pointer"
+          @click="openPrivacyPopup = true"
         >
           {{ $t("nav.privacy") }}
-        </NuxtLink>
+        </div>
       </div>
 
       <!-- Desktop Actions -->
       <div class="hidden lg:!flex justify-center items-center gap-3">
         <div>
-          <BaseButton :content="$t('nav.download')" />
+          <BaseButton :content="$t('nav.download')" @click.prevent="openDownloadPopup = true" />
         </div>
         <div
           class="cursor-pointer hover:scale-[1.02] transition duration-300 ease-in-out"
@@ -129,22 +130,20 @@
         >
           {{ $t("nav.home") }}
         </NuxtLink>
-        <NuxtLink
-          :to="localePath('/about')"
+        <a
+          :href="localePath('/#about')"
           class="text-[#303030] hover:bg-gray-300 p-3 rounded-[25px] transition"
-          exact-active-class="font-bold bg-gray-200"
           @click="closeMenu"
         >
           {{ $t("nav.about") }}
-        </NuxtLink>
-        <NuxtLink
-          :to="localePath('/why_us')"
+        </a>
+        <a
+          :href="localePath('/#why_us')"
           class="text-[#303030] hover:bg-gray-300 p-3 rounded-[25px] transition"
-          exact-active-class="font-bold bg-gray-200"
           @click="closeMenu"
         >
           {{ $t("nav.why_us") }}
-        </NuxtLink>
+        </a>
         <NuxtLink
           :to="localePath('/book_now')"
           class="text-[#303030] hover:bg-gray-300 p-3 rounded-[25px] transition"
@@ -153,16 +152,14 @@
         >
           {{ $t("nav.book_now") }}
         </NuxtLink>
-        <NuxtLink
-          :to="localePath('/privacy')"
-          class="text-[#303030] hover:bg-gray-300 p-3 rounded-[25px] transition"
-          exact-active-class="font-bold bg-gray-50"
-          @click="closeMenu"
+        <div
+          class="text-[#303030] hover:bg-gray-300 p-3 rounded-[25px] transition cursor-pointer"
+          @click="closeMenu, openPrivacyPopup = true, toggleMenu()"
         >
           {{ $t("nav.privacy") }}
-        </NuxtLink>
+        </div>
         <div class="border-t pt-4 flex flex-col gap-3">
-          <BaseButton :content="$t('nav.download')" />
+          <BaseButton :content="$t('nav.download')" @click.prevent="openDownloadPopup = true, toggleMenu()" />
           <button
             @click="changeLanguage"
             class="flex items-center gap-2 p-3 hover:bg-gray-300 rounded-[25px] transition cursor-pointer w-full h-[48px]"
@@ -180,12 +177,24 @@
       </div>
     </div>
   </div>
+
+  <Popup
+    :show="openPrivacyPopup"
+    @close="openPrivacyPopup = false"
+    type="privacy"
+  />
+  <Popup
+    :show="openDownloadPopup"
+    @close="openDownloadPopup = false"
+    type="download"
+  />
 </template>
 
 <script setup>
 const localePath = useLocalePath();
 const { locale, setLocale } = useI18n();
-
+const openPrivacyPopup = ref(false);
+const openDownloadPopup = ref(false);
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {

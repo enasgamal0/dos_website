@@ -1,7 +1,7 @@
 <template>
   <HomeHero />
-  <HomeAbout />
-  <HomeWhyUs />
+  <HomeAbout id="about" />
+  <HomeWhyUs id="why_us" />
   <HomeCars />
   <HomeDownload />
   <HomeBranches />

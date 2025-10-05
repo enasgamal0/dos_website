@@ -1,13 +1,13 @@
 <template>
-  <div class="flex flex-wrap justify-center items-center gap-20 py-20 mx-8 lg:!mx-0">
+  <div class="md:flex flex-wrap justify-center items-center gap-10 py-20 mx-8 lg:!mx-5">
     <div data-aos="zoom-in">
       <img
         src="/about.png"
         alt="About Dos"
-        class="lg:!max-w-[549px] lg:!max-h-[374px]"
+        class="md:!max-w-[549px] md:!max-h-[374px]"
       />
     </div>
-    <div class="w-[549px] h-[374px]">
+    <div class="md:w-[549px] md:h-[374px] mt-8 md:!mt-0">
       <h1 class="text-[35px] font-[700] text-[#121212] mb-3" data-aos="zoom-in">
         {{ $t("about.title") }}
       </h1>

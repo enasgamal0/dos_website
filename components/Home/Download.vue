@@ -4,9 +4,9 @@
   >
     <div class="block xl:!hidden">
       <img
-        src="/download_img2.png"
+        src="/download_img.png"
         alt="Download Dos App"
-        class="w-[450px] max-h-[385px] animate-[float_3s_ease-in-out_infinite] mx-auto my-5"
+        class="md:!h-[385px] md:!w-[346px] h-[250px] w-[220px] animate-[float_3s_ease-in-out_infinite] mx-auto mt-5 mb-8"
         data-aos="zoom-in"
         :class="locale == 'en' ? 'scale-x-[-1]' : ''"
       />

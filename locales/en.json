@@ -35,7 +35,10 @@
 
   "cars": {
     "title": "Explore available cars and choose what suits you",
-    "desc": "A wide selection of economy, family, and luxury cars to meet all your needs – rent your car within minutes, wherever you are."
+    "desc": "A wide selection of economy, family, and luxury cars to meet all your needs – rent your car within minutes, wherever you are.",
+    "currency": "Riyal",
+    "days": "Days",
+    "showDetails": "Show Details"
   },
 
   "download": {
@@ -110,23 +113,11 @@
     "desc": "In dos Learn, we believe that learning English should be fun and appropriate for every student. That's why we designed our platform to offer interactive content and educational videos tailored to your academic level, from elementary to secondary school. We're here to support you in developing your listening, speaking, reading, and writing skills, with simple and clear steps."
   },
   "static_pages": {
-    "terms": "Terms and Use",
     "privacy": "Privacy Policy",
-    "logout": "Logout",
-    "logout_desc": "Are you sure you want to logout?",
-    "delete_account": "Delete Account",
-    "delete_account_desc": "Are you sure you want to delete your account?",
-    "delete_my_account": "Delete My Account",
-    "login": "Please, login first to subscribe",
-    "login_fav": "Please, login first to add to favorites",
-    "login_desc": "You will be redirected to login page automatically",
-    "subscription": "Please, select a package first to subscribe",
-    "subscription_desc": "You will be redirected to subscription page automatically",
-    "change_password": "Change Password",
-    "change_password_desc": "Do you want to change your password?",
-    "change_email": "Change Email",
-    "change_email_desc": "Do you want to change your email?",
-    "first_otp_desc": "Enter the verification code sent to your new email address"
+    "download": "Download the app now and enjoy an easy, fast, and secure car rental experience in any country.",
+    "download_desc1": "With our app, renting a car has never been easier. Browse hundreds of options from economy, family, and luxury cars in multiple countries, and book in just minutes.",
+    "download_desc2": "The app is designed to provide you with a smooth and comfortable user experience, with local support for each country, competitive prices, and secure payment methods.",
+    "download_desc3": "Whether you're planning a business trip or a vacation, your car is waiting for you... with just one tap."
   },
   "bread_crumb": {
     "about": "About dos Learn",
