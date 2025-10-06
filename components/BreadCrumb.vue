@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-[#4B007D] bg-no-repeat min-h-[167px] text-center pt-[40px] pb-[20px] bread_crumb"
+    class="bg-[url('/hero_bg.png')] bg-cover bg-center bg-no-repeat min-h-[167px] text-center pt-[40px] pb-[20px] bread_crumb"
   >
     <h1
       class="lg:!text-[32px] text-[24px] font-[800] text-white max-w-[86%] break-words m-auto"
@@ -74,14 +74,3 @@ defineProps({
   },
 });
 </script>
-<style scoped>
-.bread_crumb {
-  background-image: url("/why_us_top.png"), url("/why_us_bottom.png");
-  background-position: top 0 right 0, bottom 0 left 0;
-}
-@media (max-width: 768px) {
-  .bread_crumb {
-    background-image: none;
-  }
-}
-</style>

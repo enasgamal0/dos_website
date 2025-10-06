@@ -258,7 +258,7 @@
                               backendError = '';
                             }
                           "
-                          class="text-[#a2a2a2] hover:text-red-500 cursor-pointer"
+                          class="text-[#a2a2a2] cursor-pointer"
                         >
                           ✕
                         </button>

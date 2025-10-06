@@ -66,52 +66,6 @@
     "desc": "Your journey starts with us! Discover a variety of car rental options to suit all your needs, whether you're traveling for business or leisure.",
     "rightsReserved": "All rights reserved for Dos"
   },
-  "S1": {
-    "start_learning": "Start Learning Now",
-    "desc": "From elementary to secondary school, the dos Learn platform helps you develop English dosge skills in an engaging and interactive way."
-  },
-  "S2": {
-    "title": "About Us",
-    "platform": "Platform",
-    "dos_learn": "dos Learn",
-    "subtitle": "Your journey to learn English begins here",
-    "desc": "In dos Learn, we believe that learning English should be fun and appropriate for every student. That's why we designed our platform to offer interactive content and educational videos tailored to your academic level, from elementary to secondary school. We're here to support you in developing your listening, speaking, reading, and writing skills, with simple and clear steps.",
-    "more": "More About Us"
-  },
-  "S3": {
-    "title": "Why",
-    "subtitle": "Our platform is designed to provide a comprehensive learning experience that helps you improve your English skills in a flexible, enjoyable, and level-appropriate way.",
-    "start": "Start Your journey Now",
-    "title1": "Content Tailored to Your Academic Level",
-    "desc1": "We offer visual lessons and interactive activities that match your academic stage, from elementary to high school.",
-    "title2": "Assess Your Level and Track Your Progress",
-    "desc2": "Start with a placement test and track your progress through regular assessments that help identify your strengths and areas for improvement.",
-    "title3": "Structured Learning Path and Flexible Subscriptions",
-    "desc3": "Follow a clear learning plan tailored to your needs, with full access through monthly or yearly subscriptions.",
-    "show_more": "Show More"
-  },
-  "S4": {
-    "course_details": "Course Details",
-    "stage": "Stage",
-    "grade": "Grade",
-    "level": "Course Level",
-    "course1_title": "Essential Listening Skills",
-    "course2_title": "Advanced Reading and Text Comprehension",
-    "course3_title": "Speak with Confidence: Effective Conversation Skills for Kids",
-    "course4_title": "English Writing: From Scratch to Mastery",
-    "course_grade": "Third",
-    "course_stage": "Primary",
-    "course_level": "Beginner",
-    "courses": "Courses",
-    "top_rated": "Top Rated",
-    "subtitle": "Start here… these courses earned student trust",
-    "show_all": "Show All",
-    "recent": "Recent"
-  },
-  "S5": {
-    "title": "Start Your journey Now",
-    "desc": "In dos Learn, we believe that learning English should be fun and appropriate for every student. That's why we designed our platform to offer interactive content and educational videos tailored to your academic level, from elementary to secondary school. We're here to support you in developing your listening, speaking, reading, and writing skills, with simple and clear steps."
-  },
   "static_pages": {
     "privacy": "Privacy Policy",
     "download": "Download the app now and enjoy an easy, fast, and secure car rental experience in any country.",
@@ -120,71 +74,8 @@
     "download_desc3": "Whether you're planning a business trip or a vacation, your car is waiting for you... with just one tap."
   },
   "bread_crumb": {
-    "about": "About dos Learn",
-    "faq": "Common Questions",
-    "login": "Login",
-    "login_desc": "All you need to learn better is waiting for you... just register.",
-    "forgot_password": "Forgot Password",
-    "register": "Create a New Account",
-    "register_desc": "Create your account now and start your journey toward mastering the English dosge from here",
-    "register_otp": "Account Activation",
-    "courses": "Courses",
-    "course_desc": "Choose your course and start learning according to your level and academic stage.",
-    "packages_desc": "Choose the right plan and start your journey to learn English with confidence!"
-  },
-  "faq": {
-    "desc": "Explore the most common questions about",
-    "no_faq": "There's no added questions"
-  },
-  "auth": {
-    "login": "Login",
-    "email": "Email",
-    "password": "Password",
-    "forgot_password": "Did you Forgot Password?",
-    "example": "Example",
-    "create_account": "Create Account",
-    "dont_have_account": "Don't have an account?",
-    "submit": "Submit",
-    "forget_password_desc": "The email address linked to your account. We will send you an email containing a reset code.",
-    "check_otp1": "Please check your email ",
-    "check_otp_email": "{email}",
-    "check_otp2": " for a reset code. Please enter the code below to continue",
-    "enter_otp": "Enter Verification Code",
-    "didnt_receive_code": "Didn't receive code?",
-    "resend_code": "Resend code",
-    "resend_in": "Resend in",
-    "sending": "Resending...",
-    "otp_resent_successfully": "Code has been resent successfully",
-    "resend_error": "Error resending Code",
-    "reset_password_desc": "Please enter a new password and confirm it to complete the password reset process.",
-    "new_password": "New Password",
-    "new_password_confirmation": "Confirm New Password",
-    "old_password": "Current Password",
-    "password_success_title": "Password has been Reset Successfully 🎉",
-    "password_success1": "You can now login using your new password ✅",
-    "password_success2": "We wish you a fun and enriching learning experience 📚🌟!",
-    "go_to_login": "Go to Login",
-    "already_have_account": "Already have an account?",
-    "first_name": "First Name",
-    "last_name": "Last Name",
-    "password_confirmation": "Password Confirmation",
-    "search_countries": "Search by country",
-    "phone": "Phone Number",
-    "select_stage": "Select Stage",
-    "select_grade": "Select Grade",
-    "register": "Create Account",
-    "agree_terms": "I Accept ",
-    "terms_and_conditions": "Terms and Conditions",
-    "register_success_title": "Account has been created successfully 🎉",
-    "register_success": "You have started a free trial for {days} days 🚀, you can browse the platform's content completely during this time! You will be redirected to the home page automatically now 🧭 ✅",
-    "go_to_home": "Go to Home",
-    "select_stage_field": "Select Stage",
-    "select_grade_field": "Select Grade",
-    "no_grades_available": "No Grades Available",
-    "password_changed_successfully": "Password has been changed successfully",
-    "enter_new_email": "Enter New Email",
-    "new_email": "New Email Address",
-    "email_changed_successfully": "Email has been changed successfully"
+    "vechiles": "Vechiles",
+    "home": "Home"
   },
   "validation": {
     "name_min": "Name should be at least 2 characters long",
@@ -227,8 +118,10 @@
     "name_required": "Name is required"
   },
   "error": {
-    "not_found": "Sorry, we couldn't find the page",
-    "not_found_desc": "The page you are trying to access is unavailable. You can return to the home page and continue learning."
+    "not_found": "Page Not Found",
+    "not_found_desc1": "It seems the link you are trying to access is incorrect or no longer available.",
+    "not_found_desc2": "Please return to the homepage and continue browsing.",
+    "back_to_home": "Back to Home"
   },
   "placeholders": {
     "enter_email": "Enter your email",
@@ -246,184 +139,6 @@
     "phone_number": "Enter phone number",
     "inquiry_type": "Enter inquiry type",
     "name": "Enter your name here"
-  },
-  "filters": {
-    "searchPlaceholder": "Search courses",
-    "clearFilters": "Clear Filters",
-    "stage": {
-      "title": "Stage",
-      "options": {
-        "all": "All",
-        "primary": "Primary",
-        "middle": "Middle",
-        "secondary": "Secondary"
-      }
-    },
-    "class": {
-      "title": "Class",
-      "options": {
-        "grade1": "Grade 1",
-        "grade2": "Grade 2",
-        "grade3": "Grade 3",
-        "grade4": "Grade 4",
-        "grade5": "Grade 5",
-        "grade6": "Grade 6"
-      }
-    },
-    "level": {
-      "title": "Course Level",
-      "options": {
-        "beginner": "Beginner",
-        "intermediate": "Intermediate",
-        "advanced": "Advanced"
-      }
-    },
-    "rating": {
-      "title": "Rating"
-    },
-    "sort": {
-      "title": "Sort By",
-      "options": {
-        "desc": "Newest to Oldest",
-        "asc": "Oldest to Newest",
-        "count_sale": "Best Selling"
-      }
-    },
-    "no_result": "No Result"
-  },
-  "courses": {
-    "title": "Courses .. Search Results 🎯",
-    "no_data": "There is No Courses",
-    "course_desc": "Course Description",
-    "aquired_skills": "Aquired Skills",
-    "students_comments": "Former Students Comments",
-    "subscribe_now": "subscribe Now",
-    "lecture": "Lecture",
-    "exams": "Exams",
-    "show_content": "Show Content",
-    "rate_course": "Rate",
-    "download_certificate": "Certificate",
-    "go_to_content": "Go to Course Content",
-    "rate_course_title": "Rate the Course",
-    "rate_course_desc": "How was your experience with this course? Share your experience with us",
-    "share_your_experience": "Share your experience",
-    "comment_here": "Write a short summary of your experience here...",
-    "confirm": "Confirm",
-    "already_rated": "You have already rated this course",
-    "favorite_toggled": "Course has been added to favorites successfully",
-    "favorite_toggled_remove": "Course has been removed from favorites successfully",
-    "favorite_toggled_error": "Error adding to favorites"
-  },
-  "comment": {
-    "student_name": "Laila Ahmed",
-    "comment": "The course explanation is easy and enjoyable, I liked the transition from sentences to paragraphs step by step."
-  },
-  "course_details": {
-    "course_content": "Course Content",
-    "resources": "Lecture Resources",
-    "show_filters": "Show Filters",
-    "start_lecture": "Start Lecture",
-    "please_finish_previous": "Please finish previous lectures before continuing",
-    "no_lectures": "There's No Available Lectures at this course",
-    "not_allowed": "You are not subscribed to this course",
-    "not_allowed_for_you": "This course is not available for you",
-    "exam_instructions": "📝 Exam Instructions",
-    "exam_instructions_title": "Before you start exam, please read the following instructions carefully:",
-    "start_exam": "Start Exam",
-    "continue_exam": "Continue Exam"
-  },
-  "packages": {
-    "title": "Choose your plan and start",
-    "title2": "learning",
-    "desc": "Enjoy full access to courses, videos, and interactive exams through flexible plans that suit your learning needs and budget.",
-    "sub_desc": "days of unlimited access to content",
-    "month": "Months",
-    "show_my_subscriptions": "Show My Subscriptions",
-    "price": "Package Price",
-    "duration": "Package Duration",
-    "tax": "Tax",
-    "total": "Total Package Price",
-    "success_package_desc": "You have successfully subscribed to the package",
-    "congratulations": "Congratulations",
-    "error": "Error",
-    "start_date": "Subscription Start Date",
-    "end_date": "Subscription End Date",
-    "status": "Subscription Status",
-    "invoice": "Invoice",
-    "package": "Package",
-    "invoice_details": "Invoice Details",
-    "invoice_number": "Invoice Number",
-    "issue_date": "Issue Date",
-    "student_name": "Student Name",
-    "package_name": "Package Name",
-    "package_price": "Package Price",
-    "tax_amount": "Tax Amount",
-    "total_amount": "Total Amount",
-    "e_invoice_details": "Electronic Invoice Details",
-    "id": "ID"
-  },
-  "exam": {
-    "time_left": "Remaining Time",
-    "time_taken": "Time Taken",
-    "current_question": "Current Question",
-    "of": "of",
-    "previous": "Previous",
-    "next": "Next",
-    "submit": "End Exam",
-    "confirm_end_exam": "Are you sure you want to end the exam?",
-    "retake_the_exam": "Retake the exam",
-    "you_did_not_pass": "You didn’t pass the exam this time",
-    "you_did_pass": "Congratulations 🎉",
-    "you_did_not_pass_desc": "No worries, learning is a continuous journey... review the material and try again to achieve a better result!",
-    "you_did_pass_desc": "You passed the exam successfully",
-    "percentage": "Percentage",
-    "total_score": "Final Score",
-    "exam_info": "Exam Details",
-    "questions_details": "Questions Details",
-    "minutes": "Minutes",
-    "minute": "Minute",
-    "start_date": "Start Date",
-    "end_date": "End Date",
-    "show_details": "Details",
-    "correct": "Correct",
-    "wrong": "Wrong",
-    "question_index": "Question Index",
-    "answer_status": "Answer Status",
-    "question_number": "Question Number",
-    "review_answer_number": "Review your answer for question number",
-    "your_answer": "Your Answer",
-    "correct_answer": "Correct Answer",
-    "not_answered": "You didn't answer this question",
-    "go_to_exam": "Go to Exam",
-    "level": "Level",
-    "success": "Exam has been submitted successfully",
-    "time_up": "Time is up"
-  },
-  "profile": {
-    "image_updated_successfully": "Image has been updated successfully",
-    "image_upload_error": "Error updating image",
-    "crop_image": "Crop Image",
-    "cancel": "Cancel",
-    "uploading": "Uploading",
-    "delete_account": "Do you want to delete your account?",
-    "gender": "Gender",
-    "birthday": "Birthday",
-    "male": "Male",
-    "female": "Female",
-    "select_gender": "Select Gender",
-    "save": "Save",
-    "updated_successfully": "Profile has been Updated successfully",
-    "no_courses": "You didn't enroll in any courses",
-    "no_favorites": "You don't have any favorites",
-    "no_subscriptions": "You don't have any subscriptions",
-    "start_courses": "Show available courses and start your educational journey now",
-    "show_packages": "Show available packages and start your educational journey now",
-    "go_to_courses": "Go to Courses",
-    "go_to_packages": "Go to Packages",
-    "change_password": "Change Password",
-    "change": "Change",
-    "change_email": "Edit Email",
-    "invoice_downloaded": "Invoice has been downloaded successfully"
   },
   "contact": {
     "title": "Contact Us",
@@ -446,11 +161,21 @@
     "enter_phone": "Enter your Phone Number",
     "enter_message": "Type your Message here..."
   },
-  "top_students": {
-    "title": "Honor Board: Where We Celebrate Our",
-    "subtitle": "Top Students",
-    "desc": "Here we celebrate our students who excelled and stood out, worked hard to achieve top scores, and earned their place on the Honor Board.",
-    "point": "Point",
-    "points": "Points"
+  "filters": {
+    "enter_Data": "Please enter the following data:",
+    "same_location": "Return the car to the same location",
+    "pickup_location": "Pickup location",
+    "dropoff_location": "Drop-off location",
+    "pickup_date": "Pickup date",
+    "dropoff_date": "Drop-off date",
+    "time_from": "Time from",
+    "time_to": "Time to",
+    "select_country": "Select country",
+    "select_city": "Select city",
+    "date_placeholder": "DD/MM/YYYY",
+    "time_placeholder": "11:00 AM",
+    "search": "Search",
+    "no_result": "No matching cars found",
+    "no_result_desc": "It seems there are no vehicles that match your current criteria. You can adjust the filters or expand your search."
   }
 }

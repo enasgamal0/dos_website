@@ -46,9 +46,10 @@
           class="text-[#303030] hover:scale-[1.02] transition duration-300 ease-in-out"
         >
           {{ $t("nav.why_us") }}
+
         </a>
         <NuxtLink
-          :to="localePath('/book_now')"
+          :to="localePath('/cars')"
           class="text-[#303030] hover:scale-[1.02] transition duration-300 ease-in-out"
           exact-active-class="font-bold"
         >
@@ -145,7 +146,7 @@
           {{ $t("nav.why_us") }}
         </a>
         <NuxtLink
-          :to="localePath('/book_now')"
+          :to="localePath('/cars')"
           class="text-[#303030] hover:bg-gray-300 p-3 rounded-[25px] transition"
           exact-active-class="font-bold bg-gray-50"
           @click="closeMenu"
