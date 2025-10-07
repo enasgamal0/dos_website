@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-[20px] bg-[#F9F9F9] w-[296px] h-[287px] pb-[16px] hover:border-black hover:border-[1px]"
+    class="rounded-[20px] bg-[#F9F9F9] max-w-[296px] h-[287px] pb-[16px] hover:border-black hover:border-[1px]"
   >
     <div class="relative">
       <div

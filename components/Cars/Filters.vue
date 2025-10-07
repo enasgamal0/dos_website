@@ -16,10 +16,17 @@
               class="relative inline-flex h-[22px] w-[45px] items-center rounded-full"
               :class="checked ? 'bg-[#34A853]' : 'bg-[#A5A5A5]'"
             >
-              <span class="sr-only">Enable notifications</span>
               <span
-                :class="checked ? 'translate-x-[-25px]' : 'translate-x-[-3px]'"
-                class="inline-block h-4 w-4 transform rounded-full bg-white transition"
+                :class="[
+                  'inline-block h-4 w-4 transform rounded-full bg-white transition',
+                  locale === 'ar'
+                    ? checked
+                      ? 'translate-x-[-25px]'
+                      : 'translate-x-[-3px]'
+                    : checked
+                    ? 'translate-x-[25px]'
+                    : 'translate-x-[3px]',
+                ]"
                 dir="ltr"
               />
             </button>
@@ -365,12 +372,28 @@
             $t("filters.pickup_date")
           }}</label>
           <div class="date_picker_container">
-            <VueDatePicker
-              v-model="pickupDate"
-              :enable-time-picker="false"
-              :auto-apply="true"
-              :format="formatDate"
-            />
+            <div
+              class="border-[0.8px] border-[#B6B6B6] rounded-[12px] px-[12px] flex items-center justify-between min-w-[277px] bg-white"
+            >
+              <img
+                src="/calendar-2.png"
+                alt="calendar"
+                class="w-[16px] h-[16px]"
+              />
+              <VueDatePicker
+                v-model="pickupDate"
+                :enable-time-picker="false"
+                :auto-apply="true"
+                :format="formatDate"
+                :placeholder="$t('filters.date_placeholder')"
+                :class="[
+                  locale === 'ar' ? 'datepicker-rtl' : 'datepicker-ltr',
+                  'flex-1 text-center border-none focus:ring-0 outline-none',
+                ]"
+                input-class="!border-none !shadow-none !bg-transparent !text-[14px]"
+              />
+              <img src="/calendar.png" alt="arrow" class="w-[16px] h-[16px]" />
+            </div>
           </div>
         </div>
         <div>
@@ -378,12 +401,28 @@
             $t("filters.dropoff_date")
           }}</label>
           <div class="date_picker_container">
-            <VueDatePicker
-              v-model="dropoffDate"
-              :enable-time-picker="false"
-              :auto-apply="true"
-              :format="formatDate"
-            />
+            <div
+              class="border-[0.8px] border-[#B6B6B6] rounded-[12px] px-[12px] flex items-center justify-between min-w-[277px] bg-white"
+            >
+              <img
+                src="/calendar-2.png"
+                alt="calendar"
+                class="w-[16px] h-[16px]"
+              />
+              <VueDatePicker
+                v-model="dropoffDate"
+                :enable-time-picker="false"
+                :auto-apply="true"
+                :format="formatDate"
+                :placeholder="$t('filters.date_placeholder')"
+                :class="[
+                  locale === 'ar' ? 'datepicker-rtl' : 'datepicker-ltr',
+                  'flex-1 text-center border-none focus:ring-0 outline-none',
+                ]"
+                input-class="!border-none !shadow-none !bg-transparent !text-[14px]"
+              />
+              <img src="/calendar.png" alt="arrow" class="w-[16px] h-[16px]" />
+            </div>
           </div>
         </div>
         <div>
@@ -391,7 +430,22 @@
             $t("filters.time_from")
           }}</label>
           <div class="date_picker_container">
-            <VueDatePicker v-model="timeFrom" time-picker :auto-apply="true" />
+            <div
+              class="border-[0.8px] border-[#B6B6B6] rounded-[12px] px-[12px] flex items-center justify-between min-w-[277px] bg-white"
+            >
+              <img src="/timer.png" alt="calendar" class="w-[16px] h-[16px]" />
+              <VueDatePicker
+                v-model="timeFrom"
+                time-picker
+                :auto-apply="true"
+                :close-on-auto-apply="true"
+                :enable-seconds="false"
+                :hide-navigation="true"
+                :placeholder="$t('filters.time_placeholder')"
+                :class="locale === 'ar' ? 'datepicker-rtl' : 'datepicker-ltr'"
+              />
+              <img src="/clock.png" alt="arrow" class="w-[16px] h-[16px]" />
+            </div>
           </div>
         </div>
         <div>
@@ -399,14 +453,32 @@
             $t("filters.time_to")
           }}</label>
           <div class="date_picker_container">
-            <VueDatePicker v-model="timeTo" time-picker :auto-apply="true" />
+            <div
+              class="border-[0.8px] border-[#B6B6B6] rounded-[12px] px-[12px] flex items-center justify-between min-w-[277px] bg-white"
+            >
+              <img src="/timer.png" alt="calendar" class="w-[16px] h-[16px]" />
+              <VueDatePicker
+                v-model="timeTo"
+                time-picker
+                :auto-apply="true"
+                :close-on-auto-apply="true"
+                :enable-seconds="false"
+                :hide-navigation="true"
+                :placeholder="$t('filters.time_placeholder')"
+                :class="locale === 'ar' ? 'datepicker-rtl' : 'datepicker-ltr'"
+              />
+              <img src="/clock.png" alt="arrow" class="w-[16px] h-[16px]" />
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="mt-[32px]">
+      <div>
+        <div v-if="errorMessage" class="text-red-500 text-[14px]">
+          {{ errorMessage }}
+        </div>
         <button
-          class="bg-[#121212] text-[#fff] py-[13.5px] w-full rounded-[12px] !cursor-pointer hover:scale-101 transition-all duration-300"
+          class="mt-[32px] bg-[#121212] text-[#fff] py-[13.5px] w-full rounded-[12px] !cursor-pointer hover:shadow-[0_0_0_1px_#121212] transition-all duration-300"
           @click="handleSubmit"
         >
           <span v-if="!submitLoading">{{ $t("filters.search") }}</span>
@@ -429,7 +501,9 @@
             {{ $t("bread_crumb.vechiles") }}
           </p>
         </div>
-        <div class="grid grid-cols-1 md:!grid-cols-2 xl:!grid-cols-5 lg:!grid-cols-3 gap-x-[18px] gap-y-[24px] mt-[24px]">
+        <div
+          class="grid grid-cols-1 md:!grid-cols-2 lg:!grid-cols-3 xl:!grid-cols-4 2xl:!grid-cols-5 gap-x-[18px] gap-y-[24px] mt-[24px]"
+        >
           <div v-for="vehicle in vehicles" :key="vehicle?.id">
             <CarCard :car="vehicle" class="m-auto" data-aos="zoom-in" />
           </div>
@@ -465,27 +539,99 @@ const timeTo = ref(null);
 const submitLoading = ref(false);
 const firstLoad = ref(true);
 const vehicles = ref([]);
+const errorMessage = ref("");
 
 const handleSubmit = async () => {
+  errorMessage.value = ""; // clear previous error
   firstLoad.value = false;
+
+  // Validation
+  // if (!selectedCountry.value || !selectedCity.value) {
+  //   errorMessage.value =
+  //     locale.value === "ar"
+  //       ? "يرجى اختيار موقع الاستلام (الدولة والمدينة)."
+  //       : "Please select pickup country and city.";
+  //   return;
+  // }
+
+  // if (
+  //   !enabled.value &&
+  //   (!selectedCountryDrop.value || !selectedCityDrop.value)
+  // ) {
+  //   errorMessage.value =
+  //     locale.value === "ar"
+  //       ? "يرجى اختيار موقع التسليم (الدولة والمدينة)."
+  //       : "Please select drop-off country and city.";
+  //   return;
+  // }
+
+  // if (!pickupDate.value || !dropoffDate.value) {
+  //   errorMessage.value =
+  //     locale.value === "ar"
+  //       ? "يرجى تحديد تاريخ الاستلام والتسليم."
+  //       : "Please select pickup and drop-off dates.";
+  //   return;
+  // }
+
+  if (
+    !timeFrom.value ||
+    !timeTo.value ||
+    !pickupDate.value ||
+    !dropoffDate.value ||
+    !selectedCountry.value ||
+    !selectedCity.value
+  ) {
+    console.log(enabled.value);
+    if (enabled.value == false) {
+      errorMessage.value =
+        locale.value === "ar"
+          ? "يرجى ملء جميع الحقول."
+          : "Please fill all fields.";
+      return;
+    } else {
+      return;
+    }
+  }
+
   try {
     submitLoading.value = true;
 
-    const data = {
-      return_vehicle_same_location: enabled?.value ? 1 : 0,
-      pickup_location: {
-        country_id: selectedCountry?.value?.id,
-        city_id: selectedCity?.value?.id,
-      },
-      delivery_location: {
-        country_id: selectedCountryDrop?.value?.id,
-        city_id: selectedCityDrop?.value?.id,
-      },
-      start_date: pickupDate?.value,
-      start_time: timeFrom?.value,
-      end_date: dropoffDate?.value,
-      end_time: timeTo?.value,
+    const formatTime = (val) => {
+      if (!val) return null;
+      const h = val.hours?.toString().padStart(2, "0");
+      const m = val.minutes?.toString().padStart(2, "0");
+      return h && m ? `${h}:${m}` : null;
     };
+
+    const data = {};
+    data.return_vehicle_same_location = enabled.value ? 1 : 0;
+
+    if (selectedCountry.value?.id || selectedCity.value?.id) {
+      data.pickup_location = JSON.stringify({
+        country_id: selectedCountry.value?.id,
+        city_id: selectedCity.value?.id,
+      });
+    }
+
+    if (
+      !enabled.value &&
+      (selectedCountryDrop.value?.id || selectedCityDrop.value?.id)
+    ) {
+      data.delivery_location = JSON.stringify({
+        country_id: selectedCountryDrop.value?.id,
+        city_id: selectedCityDrop.value?.id,
+      });
+    }
+
+    if (pickupDate.value)
+      data.start_date = new Date(pickupDate.value).toISOString().split("T")[0];
+    if (dropoffDate.value)
+      data.end_date = new Date(dropoffDate.value).toISOString().split("T")[0];
+
+    const startTime = formatTime(timeFrom.value);
+    if (startTime) data.start_time = startTime;
+    const endTime = formatTime(timeTo.value);
+    if (endTime) data.end_time = endTime;
 
     vehicles.value = await apiRequest(
       "GET",
@@ -495,7 +641,8 @@ const handleSubmit = async () => {
       null,
       locale.value
     );
-    vehicles.value = vehicles.value?.data;
+
+    vehicles.value = vehicles.value?.data ?? [];
   } catch (error) {
     vehicles.value = [];
     console.error("Failed to load vehicles:", error);
@@ -541,8 +688,37 @@ onMounted(async () => {
   padding: 16px;
 }
 .dp__input {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
   border-radius: 12px;
   border: 0.8px solid #b6b6b6;
-  padding-left: 30px;
+  /* padding-right: 30px;
+  padding-left: 30px; */
+  direction: ltr;
+  font-family: "Somar";
+  font-size: 14px;
+}
+.dp__input_icons {
+  padding: 0 !important;
+}
+.dp__today {
+  border: 1px solid black;
+}
+[dir="rtl"] .dp__inner_nav {
+  transform: none;
+}
+.datepicker-ltr .dp__input {
+  direction: ltr;
+  text-align: left;
+}
+
+.datepicker-rtl .dp__input {
+  direction: rtl;
+  text-align: right;
+}
+
+.dp__input_icon {
+  display: none !important;
 }
 </style>

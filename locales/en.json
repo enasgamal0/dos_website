@@ -173,7 +173,7 @@
     "select_country": "Select country",
     "select_city": "Select city",
     "date_placeholder": "DD/MM/YYYY",
-    "time_placeholder": "11:00 AM",
+    "time_placeholder": "Example: 11:00 AM",
     "search": "Search",
     "no_result": "No matching cars found",
     "no_result_desc": "It seems there are no vehicles that match your current criteria. You can adjust the filters or expand your search."

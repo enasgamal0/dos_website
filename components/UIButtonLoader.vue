@@ -13,7 +13,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  height: 22px;
+  /* padding: 20px; */
 }
 
 .loader {
