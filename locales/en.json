@@ -177,5 +177,24 @@
     "search": "Search",
     "no_result": "No matching cars found",
     "no_result_desc": "It seems there are no vehicles that match your current criteria. You can adjust the filters or expand your search."
+  },
+  "vechile": {
+    "vechiles": "Vechiles",
+    "branch": "Branch",
+    "car_condation": "Good condition",
+    "field_testing": "Field Testing",
+    "yes": "Yes",
+    "no": "No",
+    "features": "Features",
+    "seats": "Seats",
+    "doors": "Doors",
+    "km": "km",
+    "additional_features": "Additional Features",
+    "provider_data": "Provider Information",
+    "additional_services": "Additional Services",
+    "golden_guarantee": "Golden Guarantee",
+    "road_rules": "Road Rules",
+    "faq": "FAQ",
+    "book_now": "Book Now"
   }
 }

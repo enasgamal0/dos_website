@@ -437,10 +437,10 @@
               <VueDatePicker
                 v-model="timeFrom"
                 time-picker
-                :auto-apply="true"
+                :auto-apply="false"
                 :close-on-auto-apply="true"
                 :enable-seconds="false"
-                :hide-navigation="true"
+                :hide-navigation="false"
                 :placeholder="$t('filters.time_placeholder')"
                 :class="locale === 'ar' ? 'datepicker-rtl' : 'datepicker-ltr'"
               />
@@ -460,7 +460,7 @@
               <VueDatePicker
                 v-model="timeTo"
                 time-picker
-                :auto-apply="true"
+                :auto-apply="false"
                 :close-on-auto-apply="true"
                 :enable-seconds="false"
                 :hide-navigation="true"
@@ -542,55 +542,49 @@ const vehicles = ref([]);
 const errorMessage = ref("");
 
 const handleSubmit = async () => {
-  errorMessage.value = ""; // clear previous error
+  errorMessage.value = "";
   firstLoad.value = false;
 
-  // Validation
-  // if (!selectedCountry.value || !selectedCity.value) {
-  //   errorMessage.value =
-  //     locale.value === "ar"
-  //       ? "يرجى اختيار موقع الاستلام (الدولة والمدينة)."
-  //       : "Please select pickup country and city.";
-  //   return;
-  // }
-
-  // if (
-  //   !enabled.value &&
-  //   (!selectedCountryDrop.value || !selectedCityDrop.value)
-  // ) {
-  //   errorMessage.value =
-  //     locale.value === "ar"
-  //       ? "يرجى اختيار موقع التسليم (الدولة والمدينة)."
-  //       : "Please select drop-off country and city.";
-  //   return;
-  // }
-
-  // if (!pickupDate.value || !dropoffDate.value) {
-  //   errorMessage.value =
-  //     locale.value === "ar"
-  //       ? "يرجى تحديد تاريخ الاستلام والتسليم."
-  //       : "Please select pickup and drop-off dates.";
-  //   return;
-  // }
-
   if (
-    !timeFrom.value ||
-    !timeTo.value ||
+    !selectedCountry.value ||
+    !selectedCity.value ||
     !pickupDate.value ||
     !dropoffDate.value ||
-    !selectedCountry.value ||
-    !selectedCity.value
+    !timeFrom.value ||
+    !timeTo.value ||
+    (!enabled.value && (!selectedCountryDrop.value || !selectedCityDrop.value))
   ) {
-    console.log(enabled.value);
-    if (enabled.value == false) {
-      errorMessage.value =
-        locale.value === "ar"
-          ? "يرجى ملء جميع الحقول."
-          : "Please fill all fields.";
-      return;
-    } else {
-      return;
-    }
+    errorMessage.value =
+      locale.value === "ar"
+        ? "يرجى ملء جميع الحقول."
+        : "Please fill all fields.";
+    return;
+  }
+
+  const pickupDay = new Date(pickupDate.value);
+  const dropoffDay = new Date(dropoffDate.value);
+
+  if (dropoffDay < pickupDay) {
+    errorMessage.value =
+      locale.value === "ar"
+        ? "يجب أن يكون تاريخ التسليم بعد تاريخ الاستلام."
+        : "Drop-off date must be after pickup date.";
+    return;
+  }
+  const pickupHours = timeFrom.value?.hours ?? 0;
+  const pickupMinutes = timeFrom.value?.minutes ?? 0;
+  const dropoffHours = timeTo.value?.hours ?? 0;
+  const dropoffMinutes = timeTo.value?.minutes ?? 0;
+
+  const pickupTotalMinutes = pickupHours * 60 + pickupMinutes;
+  const dropoffTotalMinutes = dropoffHours * 60 + dropoffMinutes;
+
+  if (dropoffTotalMinutes <= pickupTotalMinutes) {
+    errorMessage.value =
+      locale.value === "ar"
+        ? "يجب أن يكون وقت التسليم بعد وقت الاستلام."
+        : "Drop-off time must be after pickup time.";
+    return;
   }
 
   try {
@@ -693,8 +687,6 @@ onMounted(async () => {
   background: transparent !important;
   border-radius: 12px;
   border: 0.8px solid #b6b6b6;
-  /* padding-right: 30px;
-  padding-left: 30px; */
   direction: ltr;
   font-family: "Somar";
   font-size: 14px;

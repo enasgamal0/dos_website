@@ -106,6 +106,27 @@
           />
         </div>
       </div>
+      <!-- Title -->
+      <h2
+        class="text-center text-[24px] font-[700] mb-8"
+        v-if="type === 'golden_guarantee'"
+      >
+        {{ $t("vechile.golden_guarantee") }}
+      </h2>
+
+      <!-- Image -->
+      <div class="flex justify-center mb-[24px]">
+        <img
+          v-if="type == 'golden_guarantee'"
+          src="/star.png"
+          alt="Golden Guarantee"
+          class="w-[64px] h-[64px]"
+        />
+      </div>
+
+      <div>
+        <p>{{ $t("vechile.golden_guarantee_content") }}</p>
+      </div>
     </div>
   </div>
 </template>

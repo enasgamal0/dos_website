@@ -26,14 +26,32 @@
         }}</span>
       </div>
       <div>
-        <h1 class="text-[#121212] text-[20px] font-[600]">
+        <h1
+          class="text-[#121212] text-[20px] font-[600]"
+          v-if="props?.car?.duration_in_days > 0"
+        >
           {{ props?.car?.duration_in_days }}
+        </h1>
+        <h1
+          class="text-[#121212] text-[20px] font-[600]"
+          v-if="props?.car?.duration_in_days == 0"
+        >
+          {{ props?.car?.price }}
         </h1>
         <div class="flex items-center justify-center gap-1">
           <p class="text-[#929292] text-[10px]">{{ $t("cars.currency") }}</p>
           <p class="text-[#929292] text-[10px]">/</p>
-          <p class="text-[#121212] text-[10px]">
+          <p
+            class="text-[#121212] text-[10px]"
+            v-if="props?.car?.price_for_selected_days > 0"
+          >
             {{ props?.car?.price_for_selected_days }}
+          </p>
+          <p
+            class="text-[#121212] text-[10px]"
+            v-if="props?.car?.price_for_selected_days == 0"
+          >
+            1
           </p>
           <p class="text-[#929292] text-[10px]">{{ $t("cars.days") }}</p>
         </div>
@@ -53,8 +71,13 @@
           props?.car?.provider?.exhibitor_type_trans
         }}</span>
       </div>
-      <NuxtLink to="/cars/1" class="flex items-center justify-center hover:underline">
-        <div class="text-[#121212] font-[500] text-[10px]">{{ $t("cars.showDetails") }}</div>
+      <NuxtLink
+        to="/cars/1"
+        class="flex items-center justify-center hover:underline"
+      >
+        <div class="text-[#121212] font-[500] text-[10px]">
+          {{ $t("cars.showDetails") }}
+        </div>
         <img
           src="/arrow_left.png"
           alt="Show Details"
