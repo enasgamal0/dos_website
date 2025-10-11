@@ -193,8 +193,16 @@
     "provider_data": "Provider Information",
     "additional_services": "Additional Services",
     "golden_guarantee": "Golden Guarantee",
+    "golden_guarantee_content": "Enjoy our Golden Warranty – providing complete office guarantee and thorough review of any violations. In addition, benefit from our 24/7 multilingual customer service dedicated to meeting all your needs, along with complaint follow-up and resolution.",
     "road_rules": "Road Rules",
     "faq": "FAQ",
-    "book_now": "Book Now"
+    "book_now": "Book Now",
+    "evaluation": "Evaluation",
+    "item_1": "Quality of the service provided compared to the value paid for the rental?",
+    "item_2": "Speed of pickup",
+    "item_3": "Speed of delivery",
+    "item_4": "Cleanliness",
+    "item_5": "Car condition",
+    "customer_reviews": "Customer reviews"
   }
 }

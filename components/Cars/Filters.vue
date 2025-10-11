@@ -542,9 +542,6 @@ const vehicles = ref([]);
 const errorMessage = ref("");
 
 const handleSubmit = async () => {
-  errorMessage.value = "";
-  firstLoad.value = false;
-
   if (
     !selectedCountry.value ||
     !selectedCity.value ||
@@ -571,6 +568,8 @@ const handleSubmit = async () => {
         : "Drop-off date must be after pickup date.";
     return;
   }
+  errorMessage.value = "";
+  firstLoad.value = false;
   const pickupHours = timeFrom.value?.hours ?? 0;
   const pickupMinutes = timeFrom.value?.minutes ?? 0;
   const dropoffHours = timeTo.value?.hours ?? 0;

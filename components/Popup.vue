@@ -7,7 +7,9 @@
     <div
       ref="modalRef"
       class="relative w-full bg-white bg-no-repeat mx-5 max-h-[80vh] overflow-y-auto"
-      :class="type == 'download' ? 'max-w-[920px] rounded-[25px]' : 'max-w-3xl p-6'"
+      :class="
+        type == 'download' ? 'max-w-[920px] rounded-[25px]' : 'max-w-3xl p-6'
+      "
       style="background-position: top 0 right 0, bottom 0 left 0"
       data-aos="zoom-in"
     >
@@ -70,9 +72,7 @@
             <p class="text-[#54514F] text-[16px]">
               {{ $t("static_pages.download_desc3") }}
             </p>
-            <div
-              class="flex justify-center lg:!justify-start gap-3 mt-7"
-            >
+            <div class="flex justify-center lg:!justify-start gap-3 mt-7">
               <NuxtLink
                 :to="app_store"
                 target="_blank"
@@ -115,17 +115,17 @@
       </h2>
 
       <!-- Image -->
-      <div class="flex justify-center mb-[24px]">
-        <img
-          v-if="type == 'golden_guarantee'"
-          src="/star.png"
-          alt="Golden Guarantee"
-          class="w-[64px] h-[64px]"
-        />
+      <div
+        class="flex justify-center mb-[24px]"
+        v-if="type == 'golden_guarantee'"
+      >
+        <img src="/star.png" alt="Golden Guarantee" class="w-[64px] h-[64px]" />
       </div>
 
-      <div>
-        <p>{{ $t("vechile.golden_guarantee_content") }}</p>
+      <div v-if="type == 'golden_guarantee'">
+        <p class="text-[16px] text-[#202020] text-center w-[80%] mx-auto mb-5">
+          {{ $t("vechile.golden_guarantee_content") }}
+        </p>
       </div>
     </div>
   </div>
