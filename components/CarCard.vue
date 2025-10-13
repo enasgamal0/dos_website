@@ -72,7 +72,7 @@
         }}</span>
       </div>
       <NuxtLink
-        :to="`/cars/${props?.car?.id}`"
+        :to="localePath(`/cars/${props?.car?.id}`)"
         class="flex items-center justify-center hover:underline"
       >
         <div class="text-[#121212] font-[500] text-[10px]">

@@ -39,7 +39,7 @@ export default defineNuxtConfig({
     ],
     lazy: true,
     langDir: "locales/",
-    detectBrowserdosge: false,
+    detectBrowserLanguage: false,
   },
   postcss: {
     plugins: {
